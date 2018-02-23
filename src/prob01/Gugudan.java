@@ -1,4 +1,6 @@
 package prob01;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -14,7 +16,16 @@ public class Gugudan {
 
 		int[] answerNumbers = randomizeAnswers();
 		int loc = randomize( 0, 8 );
-		answerNumbers[ loc ] = resultNumber;
+		boolean duplication = false;
+		for( int i = 0; i < answerNumbers.length; i++ ) {
+			if(answerNumbers[ i ] == resultNumber){
+				duplication = true;
+				break;
+			}
+		}
+		
+		if(!duplication) //보기와 답이 중복되는 경우를 회피
+			answerNumbers[ loc ] = resultNumber;
 		
 		System.out.println( l + " x " + r + " = ?" );
 		
