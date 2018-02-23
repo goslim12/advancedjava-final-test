@@ -11,6 +11,26 @@ public class CalcApp {
 		int a = scanner.nextInt();
 		int b = scanner.nextInt();
 		String operation = scanner.next();
+		int answer = 0;
+		switch(operation) {
+			case "+":
+				answer = (new Add()).calculate(a, b);
+				System.out.println(answer);
+				break;
+			case "*":
+				answer =(new Mul()).calculate(a, b);
+				System.out.println(answer);
+				break;
+			case "-":
+				answer =(new Sub()).calculate(a, b);
+				System.out.println(answer);
+				break;
+			case "/":
+				answer = (new Div()).calculate(a, b);
+				if(b!=0)
+					System.out.println(answer);
+				break;
+		}
 		
 		/* operation에 따라 4칙 연산 객체를 생성하고 caculate 메서드를 호출합니다. */
 	}
